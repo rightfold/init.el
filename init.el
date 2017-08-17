@@ -8,14 +8,15 @@
              '("melpa" . "http://melpa.org/packages/"))
 
 (setq rf-packages
-      '(evil
-	fill-column-indicator
-	fiplr
-	full-ack
-	intero
-	magit
-	scala-mode
-	yaml-mode))
+      '(color-theme-modern
+        evil
+        fill-column-indicator
+        fiplr
+        full-ack
+        intero
+        magit
+        scala-mode
+        yaml-mode))
 
 (defun rf-install-packages ()
   (interactive)
@@ -53,6 +54,12 @@
 (windmove-default-keybindings)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set up indentation ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq-default indent-tabs-mode nil)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Clean up the code on save ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -80,15 +87,24 @@
 ;; Look and feel ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(load-theme 'adwaita t)
+(setq rf-reasonable-themes
+      '(fischmeister
+        late-night
+        marine))
+(setq rf-theme 'late-night)
+(defun rf-load-theme ()
+  (interactive)
+  (load-theme rf-theme t t)
+  (enable-theme rf-theme))
+(rf-load-theme)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq fiplr-ignored-globs '((directories (".git" "target" ".stack-work"))
-			    (files ("*~"))))
+                            (files ("*~"))))
 
 
 (add-to-list 'default-frame-alist
-	     '(font . "Fixedsys Excelsior 3.01-12"))
+             '(font . "Fixedsys Excelsior 3.01-12"))
