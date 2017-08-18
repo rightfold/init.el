@@ -91,7 +91,7 @@
       '(fischmeister
         late-night
         marine))
-(setq rf-theme 'late-night)
+(setq rf-theme 'fischmeister)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
@@ -108,3 +108,20 @@
 
 (add-to-list 'default-frame-alist
              '(font . "Fixedsys Excelsior 3.01-12"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Email configuration ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq mu4e-maildir "~/Maildir"
+      mu4e-sent-folder "/[Gmail].Sent Mail"
+      mu4e-drafts-folder "/[Gmail].Drafts"
+      mu4e-trash-folder "/[Gmail].Trash"
+      mu4e-refile-folder "/[Gmail].All Mail")
+
+(setq mu4e-get-mail-command "offlineimap")
+(setq mu4e-sent-messages-behavior 'delete)
+
+(setq send-mail-function 'smtpmail-send-it
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 25)
