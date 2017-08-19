@@ -91,7 +91,7 @@
       '(fischmeister
         late-night
         marine))
-(setq rf-theme 'fischmeister)
+(setq rf-theme 'late-night)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
@@ -102,9 +102,12 @@
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq fiplr-ignored-globs '((directories (".git" "target" ".stack-work"))
+(setq fiplr-ignored-globs '((directories (".git"
+                                          ".stack-work"
+                                          "bower_components"
+                                          "output"
+                                          "target"))
                             (files ("*~"))))
-
 
 (add-to-list 'default-frame-alist
              '(font . "Fixedsys Excelsior 3.01-12"))
