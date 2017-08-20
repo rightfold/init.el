@@ -102,7 +102,8 @@
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq fiplr-ignored-globs '((directories (".git"
+(setq fiplr-ignored-globs '((directories ("_cache"
+                                         ".git"
                                           ".stack-work"
                                           "bower_components"
                                           "output"
