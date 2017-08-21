@@ -124,8 +124,10 @@
       mu4e-refile-folder "/[Gmail].All Mail")
 
 (setq mu4e-get-mail-command "offlineimap")
-(setq mu4e-sent-messages-behavior 'delete)
+(setq mu4e-update-interval 180)
+(setq mu4e-headers-auto-update t)
 
+(setq mu4e-sent-messages-behavior 'delete)
 (setq send-mail-function 'smtpmail-send-it
       smtpmail-smtp-server "smtp.gmail.com"
       smtpmail-smtp-service 25)
