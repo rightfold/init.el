@@ -84,6 +84,26 @@
 (global-set-key (kbd "<f5>") 'rf-compile)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Dedicated windows ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun rf-toggle-dedicated ()
+  (interactive)
+  (let ((w (selected-window)))
+    (set-window-dedicated-p w (not (window-dedicated-p w))))
+  (force-mode-line-update))
+(global-set-key (kbd "<pause>") 'rf-toggle-dedicated)
+
+(defun rf-show-dedicated ()
+  (if (window-dedicated-p (selected-window))
+      "D"
+    ""))
+
+(setq-default mode-line-format
+              (append mode-line-format
+                      '((:eval (rf-show-dedicated)))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Look and feel ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -91,7 +111,7 @@
       '(fischmeister
         late-night
         marine))
-(setq rf-theme 'late-night)
+(setq rf-theme 'marine)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
