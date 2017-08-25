@@ -136,7 +136,8 @@
                                           "bower_components"
                                           "output"
                                           "target"))
-                            (files ("*~"))))
+                            (files ("*~"
+                                    "*.pyc"))))
 
 (add-to-list 'default-frame-alist
              '(font . "Fixedsys Excelsior 3.01-12"))
