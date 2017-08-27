@@ -23,6 +23,7 @@
         full-ack
         intero
         magit
+        purescript-mode
         scala-mode
         yaml-mode))
 
@@ -78,6 +79,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-hook 'haskell-mode-hook 'intero-mode-blacklist)
+(add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Building programs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -90,6 +92,8 @@
       (call-interactively 'compile)
     (recompile)))
 (global-set-key (kbd "<f5>") 'rf-compile)
+
+(setq-default compilation-scroll-output 'first-error)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Dedicated windows ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -133,11 +137,16 @@
 (setq fiplr-ignored-globs '((directories ("_cache"
                                          ".git"
                                           ".stack-work"
+                                          "blib"
                                           "bower_components"
                                           "output"
                                           "target"))
                             (files ("*~"
-                                    "*.pyc"))))
+                                    "*.pyc"
+                                    "Makefile.old"
+                                    "MYMETA.json"
+                                    "MYMETA.yml"
+                                    "pm_to_blib"))))
 
 (add-to-list 'default-frame-alist
              '(font . "Fixedsys Excelsior 3.01-12"))
