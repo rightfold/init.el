@@ -137,6 +137,7 @@
 (setq fiplr-ignored-globs '((directories ("_cache"
                                          ".git"
                                           ".stack-work"
+                                          ".mypy_cache"
                                           "blib"
                                           "bower_components"
                                           "output"
