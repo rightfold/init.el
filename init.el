@@ -21,6 +21,7 @@
         fill-column-indicator
         fiplr
         full-ack
+        go-mode
         intero
         magit
         purescript-mode
@@ -80,6 +81,7 @@
 
 (add-hook 'haskell-mode-hook 'intero-mode-blacklist)
 (add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Building programs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
