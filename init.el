@@ -25,6 +25,7 @@
         intero
         magit
         purescript-mode
+        rust-mode
         scala-mode
         yaml-mode))
 
@@ -126,7 +127,7 @@
       '(fischmeister
         late-night
         marine))
-(setq rf-theme 'marine)
+(setq rf-theme 'late-night)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
