@@ -134,13 +134,20 @@
 (setq rf-reasonable-themes
       '(fischmeister
         late-night
-        marine))
-(setq rf-theme 'late-night)
+        marine
+        taming-mr-arneson))
+(setq rf-theme 'taming-mr-arneson)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
   (enable-theme rf-theme))
 (rf-load-theme)
+
+(add-to-list 'default-frame-alist
+             '(font . "Fixedsys Excelsior 3.01-12"))
+
+(set-face-attribute 'font-lock-keyword-face nil :font "DejaVu Serif-10")
+(set-face-attribute 'font-lock-string-face nil :font "DejaVu Serif-10")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -160,9 +167,6 @@
                                     "MYMETA.json"
                                     "MYMETA.yml"
                                     "pm_to_blib"))))
-
-(add-to-list 'default-frame-alist
-             '(font . "Fixedsys Excelsior 3.01-12"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Email configuration ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
