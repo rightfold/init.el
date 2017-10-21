@@ -16,7 +16,8 @@
              '("melpa" . "http://melpa.org/packages/"))
 
 (setq rf-packages
-      '(color-theme-modern
+      '(cobol-mode
+        color-theme-modern
         evil
         fill-column-indicator
         fiplr
@@ -25,7 +26,7 @@
         intero
         magit
         purescript-mode
-        rust-mode
+        ; rust-mode
         scala-mode
         yaml-mode))
 
@@ -36,7 +37,11 @@
     (package-install package))
   (message "Packages installed"))
 
-(load-file (shell-command-to-string "agda-mode locate"))
+(condition-case nil
+    (load-file (shell-command-to-string "agda-mode locate"))
+  (error nil))
+
+(load-file "~/.emacs.d/manual/rust-mode.el")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Disable unused features ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -46,6 +51,8 @@
 (tool-bar-mode -1)
 (global-unset-key (kbd "C-z"))
 (setq inhibit-startup-screen t)
+(global-unset-key (kbd "C-x 1"))
+(global-unset-key (kbd "C-x C-c"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Backups ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -145,9 +152,6 @@
 
 (add-to-list 'default-frame-alist
              '(font . "Fixedsys Excelsior 3.01-12"))
-
-(set-face-attribute 'font-lock-keyword-face nil :font "DejaVu Serif-10")
-(set-face-attribute 'font-lock-string-face nil :font "DejaVu Serif-10")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
