@@ -25,6 +25,7 @@
         go-mode
         intero
         magit
+        perl6-mode
         purescript-mode
         ; rust-mode
         scala-mode
