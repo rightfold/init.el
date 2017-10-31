@@ -22,6 +22,7 @@
         fill-column-indicator
         fiplr
         full-ack
+        glsl-mode
         go-mode
         intero
         magit
@@ -29,6 +30,7 @@
         purescript-mode
         ; rust-mode
         scala-mode
+        solarized-theme
         yaml-mode))
 
 (defun rf-install-packages ()
@@ -143,8 +145,9 @@
       '(fischmeister
         late-night
         marine
+        solarized-dark
         taming-mr-arneson))
-(setq rf-theme 'taming-mr-arneson)
+(setq rf-theme 'solarized-dark)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
