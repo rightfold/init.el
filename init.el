@@ -26,6 +26,7 @@
         go-mode
         intero
         magit
+        markdown-mode
         perl6-mode
         purescript-mode
         ; rust-mode
@@ -156,6 +157,11 @@
 
 (add-to-list 'default-frame-alist
              '(font . "Fixedsys Excelsior 3.01-12"))
+
+(set-face-attribute 'mode-line
+                    nil
+                    :foreground "purple"
+                    :background "black")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
