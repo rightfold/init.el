@@ -203,3 +203,15 @@
 (setq send-mail-function 'smtpmail-send-it
       smtpmail-smtp-server "smtp.gmail.com"
       smtpmail-smtp-service 25)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Org mode configuration ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun rf-org-mode-hook ()
+  (define-key org-mode-map (kbd "S-<up>") nil)
+  (define-key org-mode-map (kbd "S-<down>") nil)
+  (define-key org-mode-map (kbd "S-<left>") nil)
+  (define-key org-mode-map (kbd "S-<right>") nil))
+
+(add-hook 'org-mode-hook 'rf-org-mode-hook)
