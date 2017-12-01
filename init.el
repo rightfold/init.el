@@ -27,6 +27,7 @@
         intero
         magit
         markdown-mode
+        page-break-lines
         perl6-mode
         purescript-mode
         ; rust-mode
@@ -165,6 +166,8 @@
                     nil
                     :foreground "purple"
                     :background "black")
+
+(add-hook 'buffer-list-update-hook 'turn-on-page-break-lines-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
