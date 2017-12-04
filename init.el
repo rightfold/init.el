@@ -150,9 +150,10 @@
       '(fischmeister
         late-night
         marine
+        robin-hood
         solarized-dark
         taming-mr-arneson))
-(setq rf-theme 'solarized-dark)
+(setq rf-theme 'robin-hood)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
