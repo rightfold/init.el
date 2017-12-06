@@ -219,3 +219,5 @@
   (define-key org-mode-map (kbd "S-<right>") nil))
 
 (add-hook 'org-mode-hook 'rf-org-mode-hook)
+
+(setq org-agenda-files '("~/org"))
