@@ -29,6 +29,7 @@
         markdown-mode
         page-break-lines
         perl6-mode
+        php-mode
         purescript-mode
         ; rust-mode
         scala-mode
@@ -107,6 +108,7 @@
 (add-hook 'haskell-mode-hook 'intero-mode-blacklist)
 (add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
 (add-hook 'before-save-hook 'gofmt-before-save)
+(setq sgml-basic-offset 4)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Building programs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -176,12 +178,14 @@
 
 (setq fiplr-ignored-globs '((directories ("_cache"
                                          ".git"
+                                          ".psc-package"
                                           ".stack-work"
                                           ".mypy_cache"
                                           "blib"
                                           "bower_components"
                                           "output"
-                                          "target"))
+                                          "target"
+                                          "vendor"))
                             (files ("*~"
                                     "*.pyc"
                                     "Makefile.old"
@@ -221,3 +225,11 @@
 (add-hook 'org-mode-hook 'rf-org-mode-hook)
 
 (setq org-agenda-files '("~/org"))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((plantuml . t)))
+
+(setq org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
+
+(setq org-startup-with-inline-images t)
