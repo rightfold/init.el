@@ -24,6 +24,7 @@
         full-ack
         glsl-mode
         go-mode
+        inkpot-theme
         intero
         magit
         markdown-mode
@@ -150,12 +151,13 @@
 
 (setq rf-reasonable-themes
       '(fischmeister
+        inkpot
         late-night
         marine
         robin-hood
         solarized-dark
         taming-mr-arneson))
-(setq rf-theme 'robin-hood)
+(setq rf-theme 'inkpot)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
