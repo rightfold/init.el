@@ -109,6 +109,7 @@
 (add-hook 'haskell-mode-hook 'intero-mode-blacklist)
 (add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
 (add-hook 'before-save-hook 'gofmt-before-save)
+(add-to-list 'auto-mode-alist '("\\.\\(cbl\\|cob\\|cpy\\)\\'" . cobol-mode))
 (setq sgml-basic-offset 4)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
