@@ -27,6 +27,7 @@
         inkpot-theme
         intero
         magit
+        magithub
         markdown-mode
         page-break-lines
         perl6-mode
@@ -151,14 +152,17 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq rf-reasonable-themes
-      '(fischmeister
+      '(andreas
+        fischmeister
         inkpot
+        julie
         late-night
         marine
         robin-hood
         solarized-dark
-        taming-mr-arneson))
-(setq rf-theme 'inkpot)
+        taming-mr-arneson
+        xemacs))
+(setq rf-theme 'andreas)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
@@ -166,7 +170,7 @@
 (rf-load-theme)
 
 (add-to-list 'default-frame-alist
-             '(font . "Fixedsys Excelsior 3.01-12"))
+             '(font . "Ubuntu Mono-12"))
 
 (set-face-attribute 'mode-line
                     nil
