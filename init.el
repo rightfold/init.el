@@ -61,6 +61,7 @@
 (setq inhibit-startup-screen t)
 (global-unset-key (kbd "C-x 1"))
 (global-unset-key (kbd "C-x C-c"))
+(global-unset-key (kbd "ESC ESC ESC"))
 (dotimes (key--1 11)
   (let ((key (+ key--1 1)))
     (global-unset-key (kbd (format "<f%d>" key)))))
