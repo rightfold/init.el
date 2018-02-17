@@ -112,6 +112,7 @@
 (add-hook 'before-save-hook 'gofmt-before-save)
 (add-to-list 'auto-mode-alist '("\\.\\(cbl\\|cob\\|cpy\\)\\'" . cobol-mode))
 (setq sgml-basic-offset 4)
+(setq-default c-basic-offset 4)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Building programs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -178,6 +179,9 @@
                     :background "black")
 
 (add-hook 'buffer-list-update-hook 'turn-on-page-break-lines-mode)
+
+(set-background-color "black")
+(add-to-list 'default-frame-alist '(alpha . 84))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
