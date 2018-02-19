@@ -18,6 +18,7 @@
 (setq rf-packages
       '(cobol-mode
         color-theme-modern
+        ein
         evil
         fill-column-indicator
         fiplr
