@@ -18,6 +18,7 @@
 (setq rf-packages
       '(cobol-mode
         color-theme-modern
+        d-mode
         ein
         evil
         fill-column-indicator
@@ -181,9 +182,6 @@
 
 (add-hook 'buffer-list-update-hook 'turn-on-page-break-lines-mode)
 
-(set-background-color "black")
-(add-to-list 'default-frame-alist '(alpha . 84))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -263,3 +261,26 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (d-mode yaml-mode solarized-theme scala-mode rust-mode purescript-mode php-mode perl6-mode pcache page-break-lines marshal markdown-mode magit logito intero inkpot-theme go-mode glsl-mode ghub+ full-ack fiplr fill-column-indicator evil ein color-theme-modern cobol-mode autumn-light-theme))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Python ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun rf-highlight-python-retarded-comma ()
+  (hi-lock-face-buffer ",$" 'hi-pink))
+
+(add-hook 'python-mode-hook 'rf-highlight-python-retarded-comma)
