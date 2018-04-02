@@ -165,7 +165,7 @@
         solarized-dark
         taming-mr-arneson
         xemacs))
-(setq rf-theme 'andreas)
+(setq rf-theme 'inkpot)
 (defun rf-load-theme ()
   (interactive)
   (load-theme rf-theme t t)
@@ -255,6 +255,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-hook 'git-commit-mode-hook 'evil-insert-state)
+
+(setq magit-save-repository-buffers nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ERC ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
