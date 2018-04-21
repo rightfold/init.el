@@ -27,7 +27,6 @@
         glsl-mode
         go-mode
         inkpot-theme
-        intero
         magit
         markdown-mode
         page-break-lines
@@ -109,7 +108,6 @@
 ;; Language-specific settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-hook 'haskell-mode-hook 'intero-mode-blacklist)
 (add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
 (add-hook 'before-save-hook 'gofmt-before-save)
 (add-to-list 'auto-mode-alist '("\\.\\(cbl\\|cob\\|cpy\\)\\'" . cobol-mode))
@@ -173,7 +171,7 @@
 (rf-load-theme)
 
 (add-to-list 'default-frame-alist
-             '(font . "Ubuntu Mono-12"))
+             '(font . "Fixedsys Excelsior 3.01-12"))
 
 (set-face-attribute 'mode-line
                     nil
@@ -181,6 +179,9 @@
                     :background "black")
 
 (add-hook 'buffer-list-update-hook 'turn-on-page-break-lines-mode)
+
+(set-frame-parameter (selected-frame) 'alpha 84)
+(add-to-list 'default-frame-alist '(alpha . 84))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Finding and searching ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -263,20 +264,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (d-mode yaml-mode solarized-theme scala-mode rust-mode purescript-mode php-mode perl6-mode pcache page-break-lines marshal markdown-mode magit logito intero inkpot-theme go-mode glsl-mode ghub+ full-ack fiplr fill-column-indicator evil ein color-theme-modern cobol-mode autumn-light-theme))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Python ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
